@@ -25,6 +25,7 @@ ros2 run turtlesim turtlesim_node
 - ✅ نافذة زرقاء تفتح مع سلحفاة في المنتصف (turtle1)
 - ✅ رسالة تظهر في Terminal: `[INFO] [turtlesim]: Starting turtlesim with node name /turtlesim`
 
+![1](s1.png)
 ---
 
 ### 2. التحكم بالسلحفاة (Teleoperation)
@@ -38,6 +39,8 @@ ros2 run turtlesim turtle_teleop_key
 - استخدم **أزرار الأسهم** (↑ ↓ ← →) لتحريك السلحفاة
 - السلحفاة ترسم خط خلفها أثناء الحركة
 - اضغط `Q` أو `Ctrl+C` للإيقاف
+
+![1](s2.png)
 
 ---
 
@@ -63,6 +66,8 @@ ros2 topic list
 /turtle1/color_sensor
 /turtle1/pose
 ```
+![1](s3.png)
+
 
 #### عرض Services:
 ```bash
@@ -77,6 +82,9 @@ ros2 service list
 /clear
 ```
 
+![1](s4.png)
+
+
 ---
 
 ### 4. استخدام rqt (الواجهة الرسومية)
@@ -86,9 +94,14 @@ ros2 service list
 rqt
 ```
 
+![1](rqt1.png)
+
+
 ثم: **Plugins → Services → Service Caller**
 
 ---
+
+
 
 ### 5. إنشاء سلحفاة ثانية (Spawn)
 
@@ -113,7 +126,7 @@ rqt
 ros2 service call /spawn turtlesim/srv/Spawn "{x: 2.0, y: 2.0, theta: 0.0, name: 'turtle2'}"
 ```
 
-![rqt spawn](screenshots/rqt_spawn.png)
+![rqt spawn](rqt2.png)
 
 ---
 
@@ -135,7 +148,7 @@ ros2 service call /spawn turtlesim/srv/Spawn "{x: 2.0, y: 2.0, theta: 0.0, name:
 **النتيجة:**
 - ✅ turtle1 الآن ترسم بخط **أحمر سميك**! 🔴
 
-![set pen](screenshots/set_pen.png)
+![set pen](rqt3.png)
 
 #### باستخدام Terminal:
 ```bash
@@ -155,8 +168,6 @@ ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=turtle2
 **الآن لديك:**
 - Terminal 1 → يتحكم بـ turtle1 (خط أحمر 🔴)
 - Terminal 2 → يتحكم بـ turtle2 (خط أزرق 🔵)
-
-![remapping](screenshots/remapping.png)
 
 ---
 
@@ -227,26 +238,6 @@ ros2 interface show geometry_msgs/msg/Twist
 
 ---
 
-## 📸 لقطات الشاشة
-
-### النافذة الأساسية مع سلحفاتين
-![Two Turtles](screenshots/two_turtles.png)
-*turtle1 (برتقالية) و turtle2 (خضراء)*
-
-### rqt Service Caller - Spawn
-![rqt Spawn](screenshots/rqt_spawn_success.png)
-*إنشاء turtle2 بنجاح*
-
-### تغيير لون القلم
-![Red Pen](screenshots/red_pen_circle.png)
-*turtle1 ترسم دائرة حمراء سميكة*
-
-### Terminals النشطة
-![Terminals](screenshots/terminals_setup.png)
-*تعدد Terminals للتحكم المستقل*
-
----
-
 ## 🎯 النتائج المحققة
 
 ✅ تشغيل turtlesim_node بنجاح  
@@ -312,10 +303,10 @@ rqt --force-discover
 ---
 
 ## 👨‍💻 المؤلف
-
+LayanAtta
 تم إنجاز هذا المشروع كجزء من تعلم أساسيات ROS2 باستخدام منصة The Construct.
 
-**التاريخ:** نوفمبر 2024  
+**التاريخ:** نوفمبر 2025  
 **ROS2 Version:** Humble Hawksbill
 
 ---
